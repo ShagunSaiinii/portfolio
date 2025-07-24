@@ -1,26 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink, Github, Tag } from 'lucide-react';
 
 const Projects = () => {
+  const [showPythonTasks, setShowPythonTasks] = useState(false);
+  const [showMLTasks, setShowMLTasks] = useState(false);
+  const pythonTasks = [
+    {
+      name: 'Creating Linkedin logo using Python',
+      description: 'Code to generate a LinkedIn logo using Python graphics libraries. Demonstrates drawing and image creation techniques.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/Creating_your_didgital_image.ipynb'
+    },
+    {
+      name: 'Python menu based for WhatsApp message, sms , Instagram message and email.',
+      description: 'Code for a menu-driven interface to send WhatsApp messages, SMS, Instagram messages, and emails using Python automation libraries.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/Whatsapp_msg,sms,insta_and_mail.ipynb'
+    },
+    {
+      name: 'Dowloading webpage content using Python.',
+      description: 'Code to download and process webpage content, showcasing web scraping and data extraction techniques in Python.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/downloadinf_webpage_content.ipynb'
+    },
+    {
+      name: 'Understanding technical differences between list and tuple using Python',
+      description: 'Code examples and explanations highlighting the differences between lists and tuples in Python, including mutability and use cases.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/list_and_tuple_diff.ipynb'
+    },
+    {
+      name: 'How to read your RAM',
+      description: 'Code to access and display RAM information using Python, demonstrating system resource monitoring.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/read_your_ram.ipynb'
+    },
+    {
+      name: 'Searching using Python.',
+      description: 'Code for searching through data or files using Python, illustrating search algorithms and file handling.',
+      githubLink: 'https://github.com/ShagunSaiinii/python_task/blob/main/searching_through_python.ipynb'
+    }
+  ];
+  const mlTasks = [
+    {
+      name: 'Salary prediction model',
+      description: 'Linear regression model is used for salary prediction on the basis of year of experience.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/Linear_Regression_model.ipynb'
+    },
+    {
+      name: 'AI for NGO',
+      description: 'AI project code for NGO-related tasks and analysis.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/NGO_AI.ipynb'
+    },
+    {
+      name: 'Building chatbot for a website (Generative AI)',
+      description: 'Code for building a chatbot for a website using generative AI techniques.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/building_chatbot.ipynb'
+    },
+    {
+      name: 'Financial Assistant using Gradio',
+      description: 'Code for a financial assistant application built with Gradio and Python.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/financial_assistant_using_gradio.ipynb'
+    },
+    {
+      name: 'Creating LangChain tools for SMS and Phone call (Agentic AI)',
+      description: 'Python code for creating LangChain tools for SMS and phone call automation using agentic AI.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/langchan_tool.ipynb'
+    },
+    {
+      name: 'Streamlit code for "AI for NGO"',
+      description: 'Streamlit Python script for deploying the AI for NGO project as a web app.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/newPrompt.py'
+    },
+    {
+      name: 'Streamlit code for salary prediction model',
+      description: 'Streamlit Python script for deploying the salary prediction model as a web app.',
+      githubLink: 'https://github.com/ShagunSaiinii/Machine_learning/blob/main/salaryPredictoin.py'
+    }
+  ];
   const projects = [
     {
-      name: "AI-Powered Task Manager",
-      description: "Intelligent task management system with natural language processing and automated scheduling capabilities.",
-      techStack: ["React", "Node.js", "Python", "TensorFlow", "MongoDB"],
-      tags: ["AI", "Web", "NLP"],
-      githubLink: "#",
-      demoLink: "#"
+      name: "Machine Learning Tasks",
+      description: "Collection of my machine learning tasks and projects covering a variety of ML and deep learning topics.",
+      techStack: ["Python", "Machine Learning", "Deep Learning"],
+      tags: [],
+      githubLink: "https://github.com/ShagunSaiinii/Machine_learning",
+      demoLink: "https://github.com/ShagunSaiinii/Machine_learning"
     },
     {
-      name: "Cloud Infrastructure Monitor",
-      description: "Real-time monitoring dashboard for cloud resources with automated scaling and cost optimization.",
-      techStack: ["React", "AWS", "Docker", "Kubernetes", "Python"],
-      tags: ["Cloud", "DevOps", "Monitoring"],
-      githubLink: "#",
-      demoLink: "#"
+      name: "Python Tasks",
+      description: "Collection of my Python task covering variety of topics.",
+      techStack: ["Python", "Code"],
+      tags: [],
+      githubLink: "https://github.com/ShagunSaiinii/python_task",
+      demoLink: "https://github.com/ShagunSaiinii/python_task"
     },
     {
-      name: "Smart IoT Home System",
+      name: "Javascript Task",
       description: "Comprehensive IoT solution for home automation with machine learning-based behavioral predictions.",
       techStack: ["Python", "Raspberry Pi", "AWS IoT", "React", "PostgreSQL"],
       tags: ["IoT", "AI", "Hardware"],
@@ -28,7 +99,7 @@ const Projects = () => {
       demoLink: "#"
     },
     {
-      name: "Generative Content Platform",
+      name: "DevOps Task",
       description: "AI-driven content generation platform with advanced prompt engineering and multi-modal capabilities.",
       techStack: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL", "TypeScript"],
       tags: ["AI", "Web", "Content"],
@@ -36,18 +107,10 @@ const Projects = () => {
       demoLink: "#"
     },
     {
-      name: "Distributed Computing Framework",
+      name: "Projects",
       description: "Scalable distributed computing platform for processing large datasets with fault tolerance.",
       techStack: ["Go", "Kubernetes", "Redis", "MongoDB", "gRPC"],
       tags: ["Cloud", "Distributed", "Performance"],
-      githubLink: "#",
-      demoLink: "#"
-    },
-    {
-      name: "ML Model Deployment Pipeline",
-      description: "Automated MLOps pipeline for model training, validation, and deployment with continuous monitoring.",
-      techStack: ["Python", "MLflow", "Docker", "AWS", "FastAPI"],
-      tags: ["AI", "MLOps", "Cloud"],
       githubLink: "#",
       demoLink: "#"
     }
@@ -110,6 +173,84 @@ const Projects = () => {
                 <p className="text-gray-300 text-sm leading-relaxed">
                   {project.description}
                 </p>
+
+                {/* Python Tasks Button and Modal */}
+                {project.name === "Python Tasks" && (
+                  <>
+                    <button
+                      onClick={() => setShowPythonTasks(true)}
+                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
+                    >
+                      View All Tasks
+                    </button>
+                    {showPythonTasks && (
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+                        <div className="bg-gray-900 rounded-xl p-8 max-w-lg w-full relative shadow-2xl">
+                          <button
+                            onClick={() => setShowPythonTasks(false)}
+                            className="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl font-bold"
+                            aria-label="Close"
+                          >
+                            &times;
+                          </button>
+                          <h4 className="text-2xl font-bold text-white mb-6 text-center">Python Tasks</h4>
+                          <div className="space-y-4 max-h-96 overflow-y-auto">
+                            {pythonTasks.map((task, idx) => (
+                              <div key={idx} className="bg-gray-800 rounded-lg p-4 flex flex-col gap-1">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-white font-semibold">{task.name}</span>
+                                  <a href={task.githubLink} target="_blank" rel="noopener noreferrer" className="ml-2 p-1 bg-gray-700 rounded hover:bg-gray-600">
+                                    <Github className="w-4 h-4 text-white" />
+                                  </a>
+                                </div>
+                                <p className="text-gray-300 text-xs mt-1">{task.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {/* Machine Learning Tasks Button and Modal */}
+                {project.name === "Machine Learning Tasks" && (
+                  <>
+                    <button
+                      onClick={() => setShowMLTasks(true)}
+                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
+                    >
+                      View All Tasks
+                    </button>
+                    {showMLTasks && (
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+                        <div className="bg-gray-900 rounded-xl p-8 max-w-lg w-full relative shadow-2xl">
+                          <button
+                            onClick={() => setShowMLTasks(false)}
+                            className="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl font-bold"
+                            aria-label="Close"
+                          >
+                            &times;
+                          </button>
+                          <h4 className="text-2xl font-bold text-white mb-6 text-center">Machine Learning Tasks</h4>
+                          <div className="space-y-4 max-h-96 overflow-y-auto">
+                            {mlTasks.map((task, idx) => (
+                              <div key={idx} className="bg-gray-800 rounded-lg p-4 flex flex-col gap-1">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-white font-semibold">{task.name}</span>
+                                  <a href={task.githubLink} target="_blank" rel="noopener noreferrer" className="ml-2 p-1 bg-gray-700 rounded hover:bg-gray-600">
+                                    <Github className="w-4 h-4 text-white" />
+                                  </a>
+                                </div>
+                                <p className="text-gray-300 text-xs mt-1">{task.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
 
                 {/* Tech Stack */}
                 <div className="space-y-2">

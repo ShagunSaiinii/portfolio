@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Send, User, MessageCircle } from 'lucide-react';
+import { Mail, Linkedin, Send, User, MessageCircle, Github } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,17 +41,17 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col gap-6 items-start w-full max-w-xs">
               <a 
                 href="mailto:shagunsaini888@gmail.com"
-                className="flex items-center gap-4 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-105 group"
+                className="flex flex-row items-center gap-4 w-full p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-105 group shadow-md"
               >
                 <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-gray-300">shagunsaini888@gmail.com</p>
+                  <p className="text-gray-300 truncate">shagunsaini888@gmail.com</p>
                 </div>
               </a>
 
@@ -59,14 +59,29 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/shagun-saini-401727289"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-105 group"
+                className="flex flex-row items-center gap-4 w-full p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-105 group shadow-md"
               >
                 <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg group-hover:scale-110 transition-transform duration-300">
                   <Linkedin className="w-6 h-6 text-white" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <h4 className="text-white font-medium">LinkedIn</h4>
-                  <p className="text-gray-300">shagun-saini-401727289</p>
+                  <p className="text-gray-300 truncate">shagun-saini-401727289</p>
+                </div>
+              </a>
+
+              <a
+                href="https://github.com/ShagunSaiinii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-row items-center gap-4 w-full p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-105 group shadow-md"
+              >
+                <div className="p-3 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <Github className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-white font-medium">GitHub</h4>
+                  <p className="text-gray-300 truncate">ShagunSaiinii</p>
                 </div>
               </a>
             </div>

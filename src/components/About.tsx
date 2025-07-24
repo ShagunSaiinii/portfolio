@@ -80,6 +80,35 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* Education Timeline */}
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold text-white mb-8 font-inter text-center">Education Timeline</h2>
+        <div className="flex flex-col items-center">
+          <div className="border-l-4 border-blue-500 pl-8 space-y-8">
+            <div className="relative">
+              <div className="absolute -left-10 top-1 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">Class X</h3>
+                <p className="text-gray-300">94.6% &mdash; Maples Academy</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-10 top-1 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">Class XII</h3>
+                <p className="text-gray-300">94.8% &mdash; Maples Academy</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-10 top-1 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">3rd year BTech CSE</h3>
+                <p className="text-gray-300">DIT University, Dehradun</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

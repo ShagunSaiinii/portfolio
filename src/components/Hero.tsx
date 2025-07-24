@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Code, MapPin, Mail, Phone, Github, Linkedin, Download } from 'lucide-react';
+import { Code, MapPin, Mail, Github, Linkedin, Download } from 'lucide-react';
+import profilePic from '../WhatsApp Image 2025-07-24 at 10.34.37.jpeg';
 
 const Hero = () => {
   const [currentTagline, setCurrentTagline] = useState(0);
+  const [showLocation, setShowLocation] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
   const taglines = [
     "Passionate about AI, Cloud, and Full Stack Development.",
     "Turning ideas into impact with intelligent systems and scalable apps."
@@ -14,6 +17,12 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  // Scroll to section helper
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 md:px-12 relative">
@@ -27,7 +36,7 @@ const Hero = () => {
         <div className="hidden md:flex items-center gap-6 text-gray-300">
           <a href="#home" className="hover:text-white transition-colors">Home</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+          <a href="#certificates" className="hover:text-white transition-colors">Experience</a>
         </div>
         <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-105 font-medium">
           <Download className="w-4 h-4 inline mr-2" />
@@ -62,10 +71,16 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-4">
-            <button className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-all duration-300 hover:scale-105">
+            <button
+              className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+              onClick={() => scrollToSection('projects')}
+            >
               View Projects
             </button>
-            <button className="border border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+            <button
+              className="border border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105"
+              onClick={() => scrollToSection('contact')}
+            >
               Contact Info
             </button>
           </div>
@@ -75,36 +90,44 @@ const Hero = () => {
         <div className="flex flex-col items-center space-y-8">
           {/* Profile Image */}
           <div className="relative">
-            <div className="w-64 h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center border-4 border-gray-600 hover:border-gray-500 transition-all duration-300">
-              <div className="w-56 h-56 bg-gray-700 rounded-full flex items-center justify-center">
-                <span className="text-6xl text-white font-bold">SS</span>
-              </div>
+            <div className="w-64 h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center border-4 border-gray-600 hover:border-gray-500 transition-all duration-300 overflow-hidden">
+              <img
+                src={profilePic}
+                alt="Profile"
+                className="w-56 h-56 object-cover object-center rounded-full transform scale-125"
+              />
             </div>
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-black"></div>
           </div>
-
           {/* Contact Info */}
           <div className="space-y-3 w-full max-w-sm">
-            <button className="w-full bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-700 transition-all duration-300 hover:scale-105">
+            <button
+              className="w-full bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-700 transition-all duration-300 hover:scale-105"
+              onClick={() => setShowLocation(!showLocation)}
+            >
               <MapPin className="w-5 h-5" />
               <span>Location</span>
             </button>
-            <button className="w-full bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-700 transition-all duration-300 hover:scale-105">
+            {showLocation && (
+              <div className="text-center text-gray-200 bg-gray-900 rounded-lg p-2 mt-2">Dehradun, Uttarakhand</div>
+            )}
+            <button
+              className="w-full bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-700 transition-all duration-300 hover:scale-105"
+              onClick={() => setShowEmail(!showEmail)}
+            >
               <Mail className="w-5 h-5" />
               <span>Email</span>
             </button>
-            <button className="w-full bg-gray-800 text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-700 transition-all duration-300 hover:scale-105">
-              <Phone className="w-5 h-5" />
-              <span>Contact Number</span>
-            </button>
+            {showEmail && (
+              <div className="text-center text-gray-200 bg-gray-900 rounded-lg p-2 mt-2">shagunsaini888@gmail.com</div>
+            )}
           </div>
-
           {/* Social Links */}
           <div className="flex gap-4">
-            <a href="#" className="p-4 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 hover:scale-110">
+            <a href="https://github.com/ShagunSaiinii" target="_blank" rel="noopener noreferrer" className="p-4 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 hover:scale-110">
               <Github className="w-6 h-6 text-white" />
             </a>
-            <a href="#" className="p-4 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 hover:scale-110">
+            <a href="https://www.linkedin.com/in/shagun-saini-401727289" target="_blank" rel="noopener noreferrer" className="p-4 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 hover:scale-110">
               <Linkedin className="w-6 h-6 text-white" />
             </a>
           </div>
